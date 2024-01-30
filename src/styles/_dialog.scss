@@ -1,0 +1,90 @@
+@mixin flexCenter($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+.dialog {
+  $button-size: 30px;
+  $heading-height: 50px;
+  $dialog-width: 400px;
+  padding: 0;
+  height: 350px;
+  width: $dialog-width;
+  border-radius: 7px;
+  position: relative;
+  overflow: hidden;
+  @media (max-width: $dialog-width) {
+    & {
+      width: 100vw;
+    }
+  }
+  &::backdrop {
+    background-color: rgba(#000, 0.8);
+  }
+  &[open] {
+    animation: open-anim var(--dialog-animation-speed) forwards;
+  }
+  &.close {
+    animation: close-anim var(--dialog-animation-speed) forwards;
+  }
+  .dialog-content {
+    padding: 7px 15px;
+    overflow-y: scroll;
+    height: calc(100% - #{$heading-height * 1.5} - #{$button-size});
+    &::-webkit-scrollbar {
+      $scroll-bar-size: 7px;
+      width: $scroll-bar-size;
+      height: $scroll-bar-size;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(#fff, 0.7);
+      border-radius: 5px;
+    }
+  }
+  .dialog-heading {
+    border-top: 1px solid #fff;
+    margin-top: $button-size;
+    width: 100%;
+    height: $heading-height;
+    @include flexCenter;
+  }
+  .dialog-close-btn {
+    @include flexCenter;
+    $transition-speed: 250ms;
+    background-color: transparent;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    width: $button-size;
+    height: $button-size;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background-color $transition-speed;
+    &:hover,
+    &:focus {
+      background-color: red;
+    }
+  }
+}
+
+@keyframes open-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes close-anim {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

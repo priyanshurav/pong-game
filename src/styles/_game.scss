@@ -1,0 +1,20 @@
+@import './mixins';
+
+.game {
+  @include fullscreen;
+  background-color: black;
+  position: relative;
+  .ball {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: top var(--transition-speed), left var(--transition-speed);
+  }
+  .paddle {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: top var(--transition-speed);
+    transition-timing-function: linear;
+  }
+}

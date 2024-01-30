@@ -1,0 +1,60 @@
+@mixin fullscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+}
+@mixin flexCenter($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+$white: invert(100%) sepia(0%) saturate(7500%) hue-rotate(110deg)
+  brightness(98%) contrast(108%);
+
+$black: invert(0%) sepia(0%) saturate(7476%) hue-rotate(97deg) brightness(104%)
+  contrast(106%);
+@mixin icon-button($height, $width, $hover: true) {
+  background-color: transparent;
+  height: $height;
+  width: $width;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-origin: content-box;
+  padding: 0;
+  margin: 0 2px;
+  filter: $white;
+  cursor: pointer;
+  @if $hover {
+    $transition-speed: 300ms;
+    transition: background-color $transition-speed, filter $transition-speed;
+    &:hover,
+    &:focus {
+      background-color: #fff;
+      filter: $black;
+    }
+  }
+}
+
+@mixin bordered-btn {
+  $transition-speed: 250ms;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #ffffff;
+  font-size: 1.3rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color $transition-speed, background-color $transition-speed;
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    color: #000;
+  }
+}

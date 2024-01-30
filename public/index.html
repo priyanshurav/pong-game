@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A snakes and ladders game." />
+    <meta name="theme-color" content="#000000" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pong</title>
+  </head>
+  <body>
+    <noscript>
+      <style>
+        body {
+          background-color: #fff;
+        }
+        * {
+          font-family: 'Times New Roman', Times, serif;
+        }
+        body :not(noscript):not(.no-js-warning) {
+          display: none;
+        }
+      </style>
+      <div class="no-js-warning">You need JavaScript to run this app.</div>
+    </noscript>
+    <section class="game">
+      <div class="paddle" id="paddle-1"></div>
+      <div class="ball"></div>
+      <div class="paddle" id="paddle-2"></div>
+      <div class="buttons">
+        <button class="sound-btn"></button>
+        <button class="instructions-btn"></button>
+        <button class="pause-btn"></button>
+      </div>
+      <div class="scores">
+        <span id="player-1-score" class="score"></span>
+        <span id="player-2-score" class="score"></span>
+      </div>
+    </section>
+    <section class="pause-screen hide">
+      <h1>paused</h1>
+      <button class="resume-btn">resume</button>
+    </section>
+    <section class="start-screen">
+      <button class="start-btn">Start</button>
+    </section>
+  </body>
+</html>

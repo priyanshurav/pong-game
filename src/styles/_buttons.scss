@@ -1,0 +1,26 @@
+@import './mixins';
+
+.buttons {
+  @include fullscreen;
+  z-index: 10;
+  $button-size: 32px;
+  display: flex;
+  justify-content: center;
+  padding: 7px calc(var(--paddle-width) * 4);
+  .pause-btn {
+    @include icon-button($button-size, $button-size);
+    background-image: url(../assets/icons/pause.svg);
+  }
+  .instructions-btn {
+    @include icon-button($button-size, $button-size);
+    background-image: url(../assets/icons/instructions.svg);
+    padding: 3px 0;
+  }
+  .sound-btn {
+    @include icon-button($button-size, $button-size);
+    background-image: url(../assets/icons/sound.svg);
+    &.mute {
+      background-image: url(../assets/icons/sound-mute.svg);
+    }
+  }
+}

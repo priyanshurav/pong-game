@@ -1,0 +1,27 @@
+@import './mixins';
+
+.pause-screen {
+  @include fullscreen;
+  @include flexCenter(column);
+  $transition-speed: 250ms;
+  background-color: rgba(#000000, 0.8);
+  z-index: 15;
+  animation: open-anim $transition-speed forwards;
+  h1 {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 3rem;
+  }
+  .resume-btn {
+    @include bordered-btn;
+  }
+}
+
+@keyframes open-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

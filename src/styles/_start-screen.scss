@@ -1,0 +1,13 @@
+@import './mixins';
+
+.start-screen {
+  @include fullscreen;
+  @include flexCenter;
+  background-color: rgba(#000, 0.8);
+  z-index: 120;
+  .start-btn {
+    @include bordered-btn;
+    font-size: 2rem;
+    padding: 10px 25px;
+  }
+}

@@ -1,0 +1,29 @@
+@import './game';
+@import './scores';
+@import './pause-screen';
+@import './dialog';
+@import './snackbar';
+@import './buttons';
+@import './start-screen';
+
+* {
+  box-sizing: border-box;
+  font-family: Roboto, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  --transition-speed: 0;
+}
+html {
+  font-size: 16px;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.hide {
+  display: none;
+}

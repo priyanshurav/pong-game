@@ -1,0 +1,13 @@
+@import './mixins';
+
+.scores {
+  @include fullscreen;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px calc(var(--paddle-width) + 5px);
+  .score {
+    color: #fff;
+    font-size: 2rem;
+  }
+}
